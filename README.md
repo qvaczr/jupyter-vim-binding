@@ -105,8 +105,25 @@ You need to use these `<Plug>` mappings to prevent infinity loop (See samples in
 
 
 Customization
--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
+### Colors in dark mode:
+If you are trying to use some form of dark mode, for example from another JN extension or a browser extension (I recommend 'stylish' in Firefox), you will notice that normal mode colors in the background are still bright yellow-ish.
+To fix this, navigate to your jn extensions directory
+
+```bash
+cd $(jupyter --data-dir)/nbextensions/vim_binding
+```
+and edit `vim_binding.css`
+
+change the last two 'background-color' values in the file to for example:
+```css
+background-color: #393b4c;
+background-color: #2b2c38;
+```
+... or any other color you want. Changes apply after saving this file and then refreshing your JN page.
+
+### Key mappings:
 To customize key mappings in *Vim mode*, you need to understand that there are two kinds of mappings in this extension:
 
 1. Mappings provided by [Jupyter Notebook][], users can customize this type of mappings with [Keyboard shortcut editor][] provided in [IPython-notebook-extensions][]
